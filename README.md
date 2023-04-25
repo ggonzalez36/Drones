@@ -11,7 +11,7 @@ To build and run the project, you will need to have Java and Maven installed on 
 
 3. Run the following command to build the project:
 
-``` Bash
+``` Shell
 mvn clean package
 ```
 4. Run the following command to start the server:
