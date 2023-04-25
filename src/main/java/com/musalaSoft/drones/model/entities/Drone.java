@@ -3,9 +3,7 @@ package com.musalaSoft.drones.model.entities;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.*;
 
 
 import java.util.List;
@@ -14,6 +12,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name="drone")
+@NoArgsConstructor
 public class Drone {
 
     @Id
@@ -36,4 +35,11 @@ public class Drone {
             inverseJoinColumns = @JoinColumn(name = "id"))
     private List<Medication> medications;
 
+
+    public Drone(long droneId, String state, int batteryCapacity, int weightLimit) {
+        this.droneId=droneId;
+        this.state=state;
+        this.batteryCapacity=batteryCapacity;
+        this.weightLimit=weightLimit;
+    }
 }
