@@ -11,22 +11,21 @@ To build and run the project, you will need to have Java and Maven installed on 
 
 3. Run the following command to build the project:
 
-bash
-Copy code
+``` Shell
 mvn clean package
+```
 4. Run the following command to start the server:
 
-bash
-Copy code
+``` Bash
 java -jar target/drone-delivery-service-1.0.0.jar
+```
 This will start the server on port 8080.
 
 5. You can test the API endpoints using a tool like Postman or cURL. Here are some examples:
 
 Register a drone:
 
-bash
-Copy code
+``` JSON
 POST http://localhost:8080/api/drones
 
 {
@@ -36,10 +35,10 @@ POST http://localhost:8080/api/drones
   "batteryCapacity": 90,
   "state": "IDLE"
 }
+```
 Load medication items onto a drone:
 
-bash
-Copy code
+``` Bash
 POST http://localhost:8080/api/drones/1/medications/load
 
 {
@@ -48,20 +47,22 @@ POST http://localhost:8080/api/drones/1/medications/load
   "code": "ASPIRIN_001",
   "image": "base64-encoded-image-data"
 }
+```
+
 Check loaded medication items for a drone:
 
-bash
-Copy code
+``` Bash
 GET http://localhost:8080/api/drones/1/medications
+```
 Check available drones for loading:
 
-bash
-Copy code
+``` Bash
 GET http://localhost:8080/api/drones/available
+```
 Check drone battery level:
 
-bash
-Copy code
+``` Bash
 GET http://localhost:8080/api/drones/1/battery
+````
 # Database
 The project uses an H2 in-memory database to store data. The database schema is created automatically when the application starts up, using the schema.sql and data.sql files in the src/main/resources directory.
